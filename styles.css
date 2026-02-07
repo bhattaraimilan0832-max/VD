@@ -1,0 +1,489 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fecfef, #ffecd2);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    text-align: center;
+    position: relative;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    transition: opacity 1s ease;
+}
+
+h1 {
+    font-size: 3em;
+    color: #e91e63;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: fadeIn 2s ease-in;
+}
+
+.quote {
+    font-size: 1.5em;
+    font-style: italic;
+    margin: 20px 0;
+    color: #ad1457;
+    animation: slideIn 3s ease-out;
+}
+
+.gallery, .final-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.gallery img, .final-gallery img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.gallery img:hover, .final-gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.quotes-section {
+    margin: 40px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #e91e63, #9c27b0); /* Purple and pink gradient */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    color: white; /* White text for contrast */
+}
+
+.quotes-section h2 {
+    color: white;
+}
+
+.quotes-section p {
+    font-style: italic;
+    margin: 10px 0;
+    color: #ffebee; /* Light pink for subtle variation */
+}
+
+.question {
+    font-size: 2em;
+    margin: 40px 0;
+    animation: bounce 2s infinite;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#yes {
+    background: #4caf50;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#yes:hover {
+    background: #45a049;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+#no {
+    background: #f44336;
+    color: white;
+    position: relative;
+}
+
+#no:hover {
+    animation: shake 0.5s;
+}
+
+.hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    color: #e91e63;
+    font-size: 2em;
+    animation: fall 5s linear infinite;
+}
+
+.roses {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.rose {
+    position: absolute;
+    color: #ff5722;
+    font-size: 1.5em;
+    animation: fall 7s linear infinite;
+}
+
+.kisses {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%; /* Left side */
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.kiss {
+    position: absolute;
+    color: #e91e63;
+    font-size: 1.8em;
+    animation: fall 6s linear infinite;
+}
+
+.hugs {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%; /* Right side */
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hug {
+    position: absolute;
+    color: #9c27b0;
+    font-size: 1.8em;
+    animation: fall 6s linear infinite;
+}
+
+.memory {
+    margin: 40px 0;
+    padding: 30px;
+    background: linear-gradient(135deg, #9c27b0, #e91e63); /* Purple and pink gradient */
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2), 0 0 20px rgba(233, 30, 99, 0.3); /* Added glow effect */
+    color: white;
+    position: relative;
+}
+
+.memory h2 {
+    color: white;
+    font-family: 'Georgia', serif; /* More romantic font */
+    font-size: 2.2em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+}
+
+.memory::before {
+    content: '💖';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 2em;
+    opacity: 0.7;
+}
+
+.memory::after {
+    content: '💕';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2em;
+    opacity: 0.7;
+}
+
+.timeline {
+    margin-top: 20px;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #ffebee, #e91e63);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    border-left: 5px solid #ffebee;
+    text-align: left;
+    color: white;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.timeline-item:hover {
+    transform: translateY(-5px);
+}
+
+.timeline-item::before {
+    content: '❤️';
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 1.2em;
+}
+
+.typing {
+    border-right: 2px solid #ffebee;
+    animation: blink 1s infinite;
+}
+
+.love-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff9a9e, #fecfef, #ffecd2); /* Matching main page gradient */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 1s ease-in;
+    overflow: hidden; /* For floating animations */
+}
+
+.overlay-hearts, .overlay-roses {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.overlay-heart {
+    position: absolute;
+    color: #e91e63;
+    font-size: 2em;
+    animation: fall 5s linear infinite;
+}
+
+.overlay-rose {
+    position: absolute;
+    color: #ff5722;
+    font-size: 1.5em;
+    animation: fall 7s linear infinite;
+}
+
+.love-message {
+    max-width: 90%;
+    padding: 40px;
+    background: rgba(255,255,255,0.9); /* Semi-transparent white with gradient overlay */
+    background-image: linear-gradient(135deg, rgba(233, 30, 99, 0.1), rgba(156, 39, 176, 0.1));
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 0 30px rgba(233, 30, 99, 0.3); /* Glow effect */
+    text-align: center;
+    overflow-y: auto;
+    max-height: 90vh;
+    animation: slideUp 1s ease-out;
+}
+
+.love-message h1 {
+    color: #e91e63;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.pulsing-heart {
+    font-size: 3em;
+    animation: pulse 2s infinite;
+    cursor: pointer;
+    display: inline-block;
+    margin: 20px 0;
+}
+
+.pulsing-heart:hover {
+    transform: scale(1.2);
+}
+
+.love-message p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin: 20px 0;
+    color: #333;
+    animation: fadeInText 2s ease-in;
+}
+
+.closing-quote {
+    font-style: italic;
+    font-size: 1.3em;
+    color: #ad1457;
+    margin: 20px 0;
+}
+
+.interactive-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+#reveal-more, #play-music {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #e91e63, #9c27b0);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#reveal-more:hover, #play-music:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.extra-memories {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 10px;
+    animation: fadeIn 1s ease-in;
+}
+
+.memory-slideshow {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.memory-slideshow img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.memory-slideshow img:hover {
+    transform: scale(1.1);
+}
+
+#back-btn {
+    margin-top: 20px;
+    background: #3f51b5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#back-btn:hover {
+    background: #303f9f;
+    transform: scale(1.05);
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInText {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+/* ... (rest of the CSS remains the same as before) ... */
+
+.kisses {
+    position: absolute;
+    top: 50%;
+    left: 10%; /* Left side of the main content area */
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.kiss {
+    width: 80px;
+    height: 80px;
+    animation: pulse 3s infinite; /* Subtle pulse */
+}
+
+.hugs {
+    position: absolute;
+    top: 50%;
+    right: 15%; /* Right side of the main content area */
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.hug {
+    width: 80px;
+    height: 80px;
+    animation: pulse 3s infinite; /* Subtle pulse */
+}
+
+.proposals {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center of the page */
+    z-index: 1;
+}
+
+.proposal {
+    width: 100px;
+    height: 100px;
+    animation: pulse 4s infinite; /* Subtle pulse */
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+}
